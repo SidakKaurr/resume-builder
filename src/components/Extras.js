@@ -33,10 +33,10 @@ class Experience extends Component {
 
   createAndDownloadPDF = () => {
     axios
-      .post ('/create-pdf', this.props.values)
+      .post ('https://resume-builder-node-js.herokuapp.com/create-pdf', this.props.values)
       .then (() => {
         axios
-          .get ('fetch-pdf', {responseType: 'arraybuffer'})
+          .get ('https://resume-builder-node-js.herokuapp.com/fetch-pdf', {responseType: 'arraybuffer'})
           .then (res => {
             const pdfBlob = new Blob ([res.data], {type: 'application/pdf'});
             saveAs (pdfBlob, `${this.props.values.firstname}'s Resume.pdf`);
