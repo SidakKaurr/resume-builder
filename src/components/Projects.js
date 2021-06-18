@@ -34,10 +34,10 @@ class Projects extends Component {
 
   createAndDownloadPDF = () => {
     axios
-      .post ('/create-pdf', this.state)
+      .post ('https://resume-builder-node-js.herokuapp.com/create-pdf', this.state)
       .then (() => {
         axios
-          .get ('fetch-pdf', {responseType: 'blob'})
+          .get ('https://resume-builder-node-js.herokuapp.com/fetch-pdf', {responseType: 'blob'})
           .then (res => {
             const pdfBlob = new Blob ([res.data], {type: 'application/pdf'});
             saveAs (pdfBlob, 'Resume.pdf');
