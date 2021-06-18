@@ -11,6 +11,7 @@
 		"axios": "^0.19.2",
 		"bootstrap": "^4.6.0",
 		"cra-template": "1.0.0",
+		"date-fns": "^2.22.1",
 		"file-saver": "^2.0.5",
 		"react": "^16.14.0",
 		"react-bootstrap": "^1.6.0",
